@@ -8,13 +8,16 @@
     border-radius: $sm-border-radius;
     word-break: keep-all;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       @include box-shadow($primary-light-color);
     }
   }
 
   .unselected {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
       border-color: $primary-200-color;
       background-color: white;
       color: $primary-200-color;
@@ -27,7 +30,9 @@
   }
 
   .selected {
-    &, &:hover, &:focus {
+    &,
+    &:hover,
+    &:focus {
       border-color: $primary-light-color;
       background-color: $primary-light-color;
       color: white;

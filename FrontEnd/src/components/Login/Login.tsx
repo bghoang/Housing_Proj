@@ -11,7 +11,7 @@ import { miscIcons } from '@icons';
 import styles from './Login.module.scss';
 import NewUserSetup from '@components/NewUserSetup';
 import { useUser } from '@hooks';
-import { TriggerButtonGA } from '@components/ga';
+import { InitGA, TriggerButtonGA } from '@components/ga';
 
 // Used in tooltip as the title
 const TooltipContent = (
@@ -32,6 +32,7 @@ const LoginUI: FunctionComponent = () => {
   const shouldShowLogin = useShouldShowLogin();
   const { login } = useUser();
 
+  InitGA();
   const responseGoogleSuccess = async (
     response: GoogleLoginResponse | GoogleLoginResponseOffline,
   ) => {
@@ -44,6 +45,7 @@ const LoginUI: FunctionComponent = () => {
         // TODO this should display the not supported modal
         // trigger event that user login fails
         TriggerButtonGA('Button', 'Click', 'LogInNotSupported');
+        console.log('please');
         return;
       }
       if (result.isNewUser) {

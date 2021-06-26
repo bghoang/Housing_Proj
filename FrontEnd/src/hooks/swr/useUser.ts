@@ -33,10 +33,10 @@ const useUser = () => {
 
     if (data.unsupportedDomain) {
       // TODO unhandled, here is where the popup should occur...
-      throw Error();
+      //throw Error();
     }
 
-    if (data && !data.isNewUser) mutate(data);
+    if (data && !data.unsupportedDomain && !data.isNewUser) mutate(data);
     return data;
   };
 
